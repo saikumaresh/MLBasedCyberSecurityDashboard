@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Dashboard</title>
+</head>
+<body>
+    <h1>Cybersecurity Dashboard</h1>
+
+    <h2>System Status</h2>
+    <p>Network Monitoring: {{ network_status }}</p>
+    <p>ML Detection: {{ ml_status }}</p>
+
+    <h2>Recent Alerts</h2>
+    <p>SQL Injection attacks detected: {{ sql_injection_count }}</p>
+    <p>DDoS attacks detected: {{ ddos_count }}</p>
+    <p>XSS attacks detected: {{ xss_count }}</p>
+
+    <h2>Attack Log</h2>
+        <ul>
+            {% for log in attack_logs %}
+                <li>{{ log.attack_type }} attack detected at {{ log.timestamp }}</li>
+            {% endfor %}
+        </ul>
+
+</body>
+</html>
